@@ -1,2 +1,6 @@
-# warpscript
-My WarpFleet repository. Custom warpscripts, free for use
+# My public WarpFleet repository
+
+This is my own WarpFleet repository. It contains custom warpscripts, free for use.
+
+
+
