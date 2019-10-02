@@ -1,0 +1,37 @@
+// Senx (pierre.papin@senx.io)
+{
+  'name' 'gtsListJuxtapose'
+  'desc' 
+  <'
+Shift each series start to the end of the previous one.
+  '>
+  'sig' [ [ [ 'gtsList:LIST<GTS>' ] [ 'juxtaposedGtsList:LIST<GTS>' ] ] ] // Signature
+  'params' {
+    // Signature params description
+    'gtsList' 'Input'
+    'juxtaposedGtsList' 'Output'
+  }
+  'examples' [
+  ]
+} 'info' STORE
+
+<%
+  !$info INFO
+  SAVE 'context' STORE
+  <%
+    // Code of the actual macro
+    0 'firstTick' STORE
+    <% DROP DUP FIRSTTICK -1 * $firstTick + TIMESHIFT DUP LASTTICK 'firstTick' STORE %> LMAP
+  %>
+  <% // catch any exception
+    RETHROW
+  %>
+  <% // finally, restore the context
+    $context RESTORE
+  %> TRY
+%>
+'gtsListJuxtapose' STORE
+
+// Unit tests
+
+$gtsListJuxtapose
