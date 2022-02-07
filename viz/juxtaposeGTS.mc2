@@ -12,6 +12,11 @@ Shift each series start to the end of the previous one.
     'juxtaposedGtsList' 'Output'
   }
   'examples' [
+<'
+$glist // input
+ @viz/juxtaposeGTS
+ 
+'>
   ]
 } 'info' STORE
 
