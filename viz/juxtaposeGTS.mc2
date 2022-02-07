@@ -18,6 +18,7 @@ $glist // input
  
 '>
   ]
+  'related' [ 'LTTB' 'TIMESHIFT' ]
 } 'info' STORE
 
 <%
